@@ -1,1 +1,1 @@
-# PennApps
+# DiversityHack
