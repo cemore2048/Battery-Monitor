@@ -1,6 +1,7 @@
 package com.demoji.rafa.demoji;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -26,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
     SharedPreferences sharedPreferences;
     public static final String MyPREFERENCES = "MyPrefs" ;
     public static final String Gender = "genderKey";
+    public static final String EXTRA_MESSAGE = "SLACK";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,8 +47,11 @@ public class MainActivity extends AppCompatActivity {
         sharedPreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
 
         if(sharedPreferences.contains("genderKey")) {
-            String name = sharedPreferences.getString("genderKey", null);
-            Toast.makeText(MainActivity.this, name, Toast.LENGTH_LONG).show();
+//            String name = sharedPreferences.getString("genderKey", null);
+//            Toast.makeText(MainActivity.this, name, Toast.LENGTH_LONG).show();
+            Intent intent = new Intent(MainActivity.this, TestIntentActivity.class);
+            //intent.putExtra("Hi Bob!", "What");
+            startActivity(intent);
         } else {
             Toast.makeText(MainActivity.this, "Not Saved", Toast.LENGTH_LONG).show();
         }
@@ -60,6 +65,9 @@ public class MainActivity extends AppCompatActivity {
                 editor.putString(Gender, gen);
                 editor.commit();
                 Toast.makeText(MainActivity.this, "Submitted", Toast.LENGTH_LONG).show();
+
+                Intent intent = new Intent(MainActivity.this, TestIntentActivity.class);
+                startActivity(intent);
             }
         });
 
