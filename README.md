@@ -1,1 +1,1 @@
-# PennApps
+# Demoji
