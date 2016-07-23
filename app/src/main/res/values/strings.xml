@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Demoji</string>
+
+    <string-array name="income_array">
+        <item>$0-$20,000</item>
+        <item>$20,000-$40,000</item>
+        <item>$40,000-$60,000</item>
+        <item>$60,000-$80,000</item>
+        <item>$80,000-$1000,000</item>
+    </string-array>
 </resources>
