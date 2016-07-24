@@ -24,12 +24,12 @@ public class EmojiActivity extends Activity implements AdapterView.OnItemSelecte
 
     // Array of strings...
 
-    String black=(new StringBuilder()).append(new String(Character.toChars(0x1F603))).toString();
-    String latino=(new StringBuilder()).append(new String(Character.toChars(0x1F622))).toString();
-    String white=(new StringBuilder()).append(new String(Character.toChars(0x1F60D))).toString();
-    String asian=(new StringBuilder()).append(new String(Character.toChars(0x1F620))).toString();
-    String alien=(new StringBuilder()).append(new String(Character.toChars(0x1F602))).toString();
-    String none=(new StringBuilder()).append(new String(Character.toChars(0x1F612))).toString();
+    String happy=(new StringBuilder()).append(new String(Character.toChars(0x1F603))).append("Happy").toString();
+    String sad=(new StringBuilder()).append(new String(Character.toChars(0x1F622))).append("Sad").toString();
+    String annoyed=(new StringBuilder()).append(new String(Character.toChars(0x1F60D))).append("Loving").toString();
+    String laughing=(new StringBuilder()).append(new String(Character.toChars(0x1F620))).append("Angry").toString();
+    String joy=(new StringBuilder()).append(new String(Character.toChars(0x1F602))).append("Laughing").toString();
+    String angry=(new StringBuilder()).append(new String(Character.toChars(0x1F612))).append("Annoyed").toString();
 
     String male=(new StringBuilder()).append(new String(Character.toChars(0x1F603))).toString();
     String female=(new StringBuilder()).append(new String(Character.toChars(0x1F622))).toString();
@@ -38,7 +38,7 @@ public class EmojiActivity extends Activity implements AdapterView.OnItemSelecte
     String trans=(new StringBuilder()).append(new String(Character.toChars(0x1F602))).toString();
     String both=(new StringBuilder()).append(new String(Character.toChars(0x1F612))).toString();
 
-    String[] racesArray = {black,latino,white,asian,alien,none};
+    String[] racesArray = {happy,sad,annoyed,laughing,joy,angry};
     String[] genderArray = {male,female,nonBin,alienG,trans,both};
     ListView listView;
     int route;

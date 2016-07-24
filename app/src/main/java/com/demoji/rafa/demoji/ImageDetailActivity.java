@@ -40,6 +40,7 @@ public class ImageDetailActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.image_activity_detail);
 
+        compare = (Button) findViewById(R.id.compare);
         image = (ImageView) findViewById(R.id.pic_detail);
         happy = (Button) findViewById(R.id.happy);
         sad = (Button) findViewById(R.id.sad);

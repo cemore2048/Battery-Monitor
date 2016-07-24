@@ -41,13 +41,13 @@ public class DemographicActivity extends Activity implements AdapterView.OnItemS
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.intent_screen);
+        setContentView(R.layout.details);
         ButterKnife.bind(this);
 
         final ArrayAdapter racesAdapter = new ArrayAdapter<String>(this, R.layout.rowlayout, racesArray);
         final ArrayAdapter genderAdapter = new ArrayAdapter<String>(this, R.layout.rowlayout, genderArray);
 
-        listView = (ListView) findViewById(R.id.demo_list);
+        listView = (ListView) findViewById(R.id.feels_list);
 
         Intent intent = getIntent();
 

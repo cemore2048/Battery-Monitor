@@ -57,14 +57,14 @@ public class SubmitActivity extends AppCompatActivity implements OnItemSelectedL
 
         sharedPreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
 
-        if(sharedPreferences.contains("genderKey")) {
-//            String name = sharedPreferences.getString("genderKey", null);
-//            Toast.makeText(SubmitActivity.this, name, Toast.LENGTH_LONG).show();
-            Intent intent = new Intent(SubmitActivity.this, EmojiActivity.class);
-            startActivity(intent);
-        } else {
-            Toast.makeText(SubmitActivity.this, "Not Saved", Toast.LENGTH_LONG).show();
-        }
+//        if(sharedPreferences.contains("genderKey")) {
+////            String name = sharedPreferences.getString("genderKey", null);
+////            Toast.makeText(SubmitActivity.this, name, Toast.LENGTH_LONG).show();
+//            Intent intent = new Intent(SubmitActivity.this, EmojiActivity.class);
+//            startActivity(intent);
+//        } else {
+//            Toast.makeText(SubmitActivity.this, "Not Saved", Toast.LENGTH_LONG).show();
+//        }
 
         String[] incomes = new String[] { "$0-$30,000", "$30,000-$50,000", "$50,000-$75,000", "$100,000+" };
         String[] ages = new String[] { "20-30", "30-40", "40-50", "50+" };
@@ -110,7 +110,7 @@ public class SubmitActivity extends AppCompatActivity implements OnItemSelectedL
         });
 
         submitButton.setOnClickListener(new View.OnClickListener() {
-            Intent intent = new Intent(SubmitActivity.this, EmojiActivity.class);
+            Intent intent = new Intent(SubmitActivity.this, MainActivity.class);
             @Override
             public void onClick(View v) {
                 String gen = genderField.getText().toString();
