@@ -1,99 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/gray">
 
-    <RelativeLayout
-        android:id="@+id/detail_container"
+    <ImageView
+        android:id="@+id/pic_detail"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"
+        android:adjustViewBounds="true"/>
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="400dp"
-            android:scaleType="centerCrop"
-            android:id="@+id/pic"
-            android:clickable="true"
-            android:transitionName="albumArt" />
+    <LinearLayout
+        android:layout_below="@+id/pic_detail"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal">
 
-        <RelativeLayout
-            android:background="#31576b"
-            android:layout_below="@id/pic"
-            android:layout_alignParentStart="true"
-            android:id="@+id/title_panel"
-            android:paddingStart="40dp"
-            android:paddingEnd="20dp"
-            android:paddingTop="20dp"
-            android:paddingBottom="20dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/happy"
+            android:textSize="30sp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/button_selector" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="Title"
-                android:id="@+id/album_title" />
+        <Button
+            android:id="@+id/sad"
+            android:textSize="30sp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/button_selector" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/album_title"
-                android:layout_alignStart="@id/album_title"
-                android:textAppearance="?android:attr/textAppearance"
-                android:text="Artistt"
-                android:id="@+id/artist" />
-        </RelativeLayout>
+        <Button
+            android:id="@+id/annoyed"
+            android:textSize="30sp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/button_selector" />
 
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@android:drawable/ic_btn_speak_now"
-            android:src="@android:drawable/ic_delete"
-            android:id="@+id/fab"
-            android:transitionName="fab"
-            android:layout_above="@+id/title_panel"
-            android:layout_alignParentEnd="true"
-            android:layout_marginBottom="-30dp"
-            android:layout_marginEnd="30dp"
-            android:contentDescription="fab"/>
+        <Button
+            android:id="@+id/love"
+            android:textSize="30sp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/button_selector" />
 
-        <LinearLayout
-            android:id="@+id/track_panel"
-            android:layout_below="@id/title_panel"
-            android:background="#eeeeee"
-            android:padding="10dp"
-            android:minHeight="80dp"
-            android:gravity="center_vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+        <Button
+            android:id="@+id/angry"
+            android:textSize="30sp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/button_selector" />
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@android:drawable/ic_dialog_email"
-                android:layout_marginStart="20dp"
-                android:id="@+id/volume"
-                android:contentDescription="Sound"/>
+        <Button
+            android:id="@+id/laughing"
+            android:textSize="30sp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/button_selector" />
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceInverse"
-                android:layout_marginStart="30dp"
-                android:layout_weight="1"
-                android:textStyle="bold"
-                android:text="Title"
-                android:id="@+id/track_name" />
+    </LinearLayout>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceInverse"
-                android:layout_marginEnd="20dp"
-                android:text="Time"
-                android:id="@+id/length" />
-        </LinearLayout>
-    </RelativeLayout>
-</ScrollView>
+
+</RelativeLayout>
