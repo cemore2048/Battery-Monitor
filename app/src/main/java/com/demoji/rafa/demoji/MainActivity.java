@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.util.Log;
-import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -14,7 +13,6 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.List;
 
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -31,7 +29,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         recyclerView = (RecyclerView) findViewById(R.id.pic_list);
         populate();
     }
@@ -62,7 +59,6 @@ public class MainActivity extends AppCompatActivity {
                         public void run() {
                             ImageRecyclerAdapter adapter = new ImageRecyclerAdapter(getImageIds(jsonString), MainActivity.this);
                             recyclerView.setAdapter(adapter);
-                            Toast.makeText(MainActivity.this, "hello", Toast.LENGTH_LONG).show();
                         }
                     });
                 } else {
