@@ -23,8 +23,15 @@ public class TestIntentActivity extends Activity {
     @BindView(R.id.demo_spinner) Spinner demoSpinner;
 
     // Array of strings...
-    String emoji = new String(Character.toChars(0x1F628));
-    String[] mobileArray = {emoji,emoji,emoji,emoji,emoji,emoji,emoji,emoji};
+
+    String emoji1=(new StringBuilder()).append(new String(Character.toChars(0x1F603))).append(" Male").toString();
+    String emoji2=(new StringBuilder()).append(new String(Character.toChars(0x1F628))).append(" Female").toString();
+    String emoji3=(new StringBuilder()).append(new String(Character.toChars(0x1F621))).append(" Non-binary").toString();
+    String emoji4=(new StringBuilder()).append(new String(Character.toChars(0x1F62A))).append(" Alien").toString();
+    String emoji5=(new StringBuilder()).append(new String(Character.toChars(0x1F61E))).append(" Trans").toString();
+    String emoji6=(new StringBuilder()).append(new String(Character.toChars(0x1F620))).append(" Both").toString();
+
+    String[] mobileArray = {emoji1,emoji2,emoji3,emoji4,emoji5,emoji6};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
