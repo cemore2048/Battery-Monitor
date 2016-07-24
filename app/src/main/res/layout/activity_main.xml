@@ -80,24 +80,23 @@
                 android:hint="Location"/>
         </android.support.design.widget.TextInputLayout>
 
-        <!-- Age Label -->
-        <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
-            android:id="@+id/age_spinner"
-            android:layout_width="match_parent"
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="Age"
-            app:met_floatingLabel="normal" />
+            android:text="Age" />
 
-        <!-- Income Label -->
-        <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
-            android:id="@+id/income_spinner"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Income"
-            app:met_floatingLabel="normal" />
         <Spinner
-            android:id="@+id/dynamic_spinner"
-            style="@style/Widget.AppCompat.Spinner.Underlined"
+            android:id="@+id/age_spinner"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Income" />
+
+        <Spinner
+            android:id="@+id/income_spinner"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content" />
 
