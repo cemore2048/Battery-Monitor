@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.app.Activity;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -20,6 +21,8 @@ import butterknife.BindView;
 
 import java.io.IOException;
 
+import okhttp3.Call;
+import okhttp3.Callback;
 import okhttp3.FormBody;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -43,8 +46,6 @@ public class MainActivity extends AppCompatActivity implements OnItemSelectedLis
     public static final String EXTRA_MESSAGE = "SLACK";
     public static String age;
     public static String income;
-
-    private final OkHttpClient client = new OkHttpClient();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -131,23 +132,37 @@ public class MainActivity extends AppCompatActivity implements OnItemSelectedLis
                 intent.putExtra("age", age);
                 intent.putExtra("income", raceField.getText().toString());
                 startActivity(intent);
+
+
+
+                try {
+                    post();
+                }catch(IOException ex) {
+                    //Do something witht the exception
+                }
             }
 
-            public void run() throws Exception {
-                RequestBody formBody = new FormBody.Builder()
-                        .add("username", "rmoreno")
-                        .add("gender", "male")
-                        .build();
-                Request request = new Request.Builder()
-                        .url("159.203.240.126:3001")
-                        .post(formBody)
-                        .build();
-
-                Response response = client.newCall(request).execute();
-                if (!response.isSuccessful()) throw new IOException("Unexpected code " + response);
-
-                System.out.println(response.body().string());
-            }
+//            public void run() throws Exception {
+//                RequestBody formBody = new FormBody.Builder()
+//                        .add("username", "'rmoreno'")
+//                        .add("gender", "'rmoreno'")
+//                        .add("race", "'rmoreno'")
+//                        .add("sexual_orientation", "'rmoreno'")
+//                        .add("income", "'rmoreno'")
+//                        .add("age", "1")
+//                        .add("religion", "'rmoreno'")
+//                        .add("city", "'rmoreno'")
+//                        .build();
+//                Request request = new Request.Builder()
+//                        .url("159.203.240.126:3001/createUser")
+//                        .post(formBody)
+//                        .build();
+//
+//                Response response = client.newCall(request).execute();
+//                if (response.isSuccessful()) {
+//                    System.out.println("WINNING");
+//                }
+//            }
         });
 
     }
@@ -160,6 +175,49 @@ public class MainActivity extends AppCompatActivity implements OnItemSelectedLis
 
     public void onNothingSelected(AdapterView<?> parent) {
         // Another interface callback
+    }
+
+    private void post() throws IOException {
+        OkHttpClient client = new OkHttpClient();
+
+        RequestBody formBody = new FormBody.Builder()
+                .add("username", " \"ROM\" ")
+                .add("gender", " \"male\" ")
+                .add("race", " \"black\" ")
+                .add("sexual_orientation", " \"ROM\" ")
+                .add("income", " \"ROM\" ")
+                .add("age", "1")
+                .add("religion", " \"ROM\" ")
+                .add("city", " \"ROM\" ")
+                .build();
+        Request request = new Request.Builder()
+                .url("http://159.203.240.126:3001/createUser")
+                .post(formBody)
+                .build();
+
+        Call call = client.newCall(request);
+
+        call.enqueue(new Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+                Log.d("Call failed", e.getMessage());
+            }
+
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+                if (response.isSuccessful()) {
+                    Log.d("Successful Connection", "connection was successful");
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            Toast.makeText(MainActivity.this, "hello", Toast.LENGTH_LONG).show();
+                        }
+                    });
+                } else {
+                    Log.e("Error connecting", "there was an error connecting to the DB");
+                }
+            }
+        });
     }
 
 }
