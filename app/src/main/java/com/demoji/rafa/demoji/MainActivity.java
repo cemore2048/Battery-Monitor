@@ -17,6 +17,10 @@ import android.widget.Spinner;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.Toast;
 
+//import com.weiwangcn.betterspinner.R;
+//import com.weiwangcn.betterspinner.library.BetterSpinner;
+import com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner;
+
 import butterknife.ButterKnife;
 import butterknife.BindView;
 
@@ -24,6 +28,10 @@ public class MainActivity extends AppCompatActivity {
 
     @BindView (R.id.input_gender) EditText editGender;
     @BindView(R.id.btn_submit) Button submitButton;
+
+    @BindView(R.id.age_spinner) MaterialBetterSpinner ageSpinner;
+    @BindView(R.id.income_spinner) MaterialBetterSpinner incomeSpinner;
+
     SharedPreferences sharedPreferences;
     public static final String MyPREFERENCES = "MyPrefs" ;
     public static final String Gender = "genderKey";
@@ -55,6 +63,8 @@ public class MainActivity extends AppCompatActivity {
                 android.R.layout.simple_spinner_item, incomes);
 
         dynamicSpinner.setAdapter(adapter);
+        ageSpinner.setAdapter(adapter);
+        incomeSpinner.setAdapter(adapter);
 
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
