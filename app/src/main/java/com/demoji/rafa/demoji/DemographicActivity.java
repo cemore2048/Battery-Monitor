@@ -53,7 +53,7 @@ public class DemographicActivity extends AppCompatActivity implements OnItemSele
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
-        submitButton.setText(new String(Character.toChars(0x1F60A)));
+        submitButton.setText(new String(Character.toChars(0x1F44D)));
 
         sharedPreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
 
