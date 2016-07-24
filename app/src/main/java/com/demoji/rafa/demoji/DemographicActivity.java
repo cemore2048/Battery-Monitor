@@ -53,6 +53,8 @@ public class DemographicActivity extends AppCompatActivity implements OnItemSele
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
+        submitButton.setText(new String(Character.toChars(0x1F60A)));
+
         sharedPreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
 
         if(sharedPreferences.contains("genderKey")) {
