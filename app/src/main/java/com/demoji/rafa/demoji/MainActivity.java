@@ -31,6 +31,7 @@ import okhttp3.RequestBody;
 
 public class MainActivity extends AppCompatActivity implements OnItemSelectedListener {
 
+    @BindView(R.id.input_username) EditText usernameField;
     @BindView(R.id.input_race) EditText raceField;
     @BindView (R.id.input_gender) EditText genderField;
     @BindView(R.id.input_orientation) EditText orientationField;
@@ -124,6 +125,7 @@ public class MainActivity extends AppCompatActivity implements OnItemSelectedLis
                 editor.putString(Gender, gen);
                 editor.commit();
 
+                intent.putExtra("username", usernameField.getText().toString());
                 intent.putExtra("race", raceField.getText().toString());
                 intent.putExtra("gender", genderField.getText().toString());
                 intent.putExtra("orientation", orientationField.getText().toString());
@@ -133,36 +135,12 @@ public class MainActivity extends AppCompatActivity implements OnItemSelectedLis
                 intent.putExtra("income", raceField.getText().toString());
                 startActivity(intent);
 
-
-
                 try {
                     post();
                 }catch(IOException ex) {
                     //Do something witht the exception
                 }
             }
-
-//            public void run() throws Exception {
-//                RequestBody formBody = new FormBody.Builder()
-//                        .add("username", "'rmoreno'")
-//                        .add("gender", "'rmoreno'")
-//                        .add("race", "'rmoreno'")
-//                        .add("sexual_orientation", "'rmoreno'")
-//                        .add("income", "'rmoreno'")
-//                        .add("age", "1")
-//                        .add("religion", "'rmoreno'")
-//                        .add("city", "'rmoreno'")
-//                        .build();
-//                Request request = new Request.Builder()
-//                        .url("159.203.240.126:3001/createUser")
-//                        .post(formBody)
-//                        .build();
-//
-//                Response response = client.newCall(request).execute();
-//                if (response.isSuccessful()) {
-//                    System.out.println("WINNING");
-//                }
-//            }
         });
 
     }
@@ -181,14 +159,14 @@ public class MainActivity extends AppCompatActivity implements OnItemSelectedLis
         OkHttpClient client = new OkHttpClient();
 
         RequestBody formBody = new FormBody.Builder()
-                .add("username", " \"ROM\" ")
-                .add("gender", " \"male\" ")
-                .add("race", " \"black\" ")
-                .add("sexual_orientation", " \"ROM\" ")
-                .add("income", " \"ROM\" ")
+                .add("username", "\""+ usernameField.getText().toString() +"\"")
+                .add("race", "\""+ raceField.getText().toString() +"\"")
+                .add("gender", "\""+ genderField.getText().toString() +"\"")
+                .add("sexual_orientation", "\""+ orientationField.getText().toString() +"\"")
+                .add("religion", "\""+ religionField.getText().toString() +"\"")
+                .add("city", "\""+ locationField.getText().toString() +"\"")
                 .add("age", "1")
-                .add("religion", " \"ROM\" ")
-                .add("city", " \"ROM\" ")
+                .add("income", "\""+ income +"\"")
                 .build();
         Request request = new Request.Builder()
                 .url("http://159.203.240.126:3001/createUser")
@@ -219,5 +197,4 @@ public class MainActivity extends AppCompatActivity implements OnItemSelectedLis
             }
         });
     }
-
 }
