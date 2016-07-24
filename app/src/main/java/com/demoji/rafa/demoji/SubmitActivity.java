@@ -50,7 +50,7 @@ public class SubmitActivity extends AppCompatActivity implements OnItemSelectedL
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.demographic_main);
         ButterKnife.bind(this);
 
         submitButton.setText(new String(Character.toChars(0x1F44D)));
