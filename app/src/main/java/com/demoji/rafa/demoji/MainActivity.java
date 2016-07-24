@@ -65,21 +65,18 @@ public class MainActivity extends AppCompatActivity implements OnItemSelectedLis
             Toast.makeText(MainActivity.this, "Not Saved", Toast.LENGTH_LONG).show();
         }
 
-        String[] incomes = new String[] { "$0-$50,000", "$50,000-$100,000", "$100,000+" };
-        String[] ages = new String[] { "20-40", "40-60", "60+" };
-
-        ArrayAdapter<String> incomesAdapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_spinner_item, incomes);
+        String[] incomes = new String[] { "$0-$30,000", "$30,000-$50,000", "$50,000-$75,000", "$100,000+" };
+        String[] ages = new String[] { "20-30", "30-40", "40-50", "50+" };
 
         ArrayAdapter<String> agesAdapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_spinner_item, ages);
-
-        incomesAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         agesAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
         ageSpinner.setAdapter(agesAdapter);
         ageSpinner.setOnItemSelectedListener(this);
 
+        ArrayAdapter<String> incomesAdapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_spinner_item, incomes);
+        incomesAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         incomeSpinner.setAdapter(incomesAdapter);
         incomeSpinner.setOnItemSelectedListener(this);
 
@@ -89,8 +86,6 @@ public class MainActivity extends AppCompatActivity implements OnItemSelectedLis
                                        int pos, long id) {
 
                 age = parent.getItemAtPosition(pos).toString();
-                //Toast.makeText(getApplicationContext(),"You have selected " + test,Toast.LENGTH_LONG).show();
-                // TODO Auto-generated method stub
             }
 
             @Override
@@ -105,8 +100,6 @@ public class MainActivity extends AppCompatActivity implements OnItemSelectedLis
                                        int pos, long id) {
 
                 income = parent.getItemAtPosition(pos).toString();
-                //Toast.makeText(getApplicationContext(),"You have selected " + test,Toast.LENGTH_LONG).show();
-                // TODO Auto-generated method stub
             }
 
             @Override
