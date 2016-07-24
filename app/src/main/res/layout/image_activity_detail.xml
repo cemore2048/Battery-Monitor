@@ -1,13 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/gray">
 
     <ImageView
         android:id="@+id/pic_detail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"
+        android:adjustViewBounds="true"/>
+
+    <LinearLayout
+        android:layout_below="@+id/pic_detail"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/happy"
+            android:textSize="30sp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/button_selector" />
+
+        <Button
+            android:id="@+id/sad"
+            android:textSize="30sp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/button_selector" />
+
+        <Button
+            android:id="@+id/annoyed"
+            android:textSize="30sp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/button_selector" />
+
+        <Button
+            android:id="@+id/love"
+            android:textSize="30sp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/button_selector" />
+
+        <Button
+            android:id="@+id/angry"
+            android:textSize="30sp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/button_selector" />
+
+        <Button
+            android:id="@+id/laughing"
+            android:textSize="30sp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/button_selector" />
+
+    </LinearLayout>
 
 
 </RelativeLayout>

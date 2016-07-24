@@ -100,9 +100,17 @@ public class MainActivity extends AppCompatActivity {
                                         @Override
                                         public void onVHClicked(ImageViewHolder vh) {
                                             int position = vh.getPosition();
-                                            String albumArtResId = picList.get(position).getId();
+                                            String id = picList.get(position).getId();
+                                            String server = picList.get(position).getServer();
+                                            String farm = picList.get(position).getFarm();
+                                            String secret = picList.get(position).getSecret();
+
+                                            Log.d("id being passed", id);
                                             Intent intent = new Intent(MainActivity.this, ImageDetailActivity.class);
-                                            intent.putExtra("Pic Id", albumArtResId);
+                                            intent.putExtra("id", id);
+                                            intent.putExtra("server", server);
+                                            intent.putExtra("farm", farm);
+                                            intent.putExtra("secret", secret);
 
                                             startActivity(intent);
                                         }
