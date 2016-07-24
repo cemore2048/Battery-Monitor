@@ -9,7 +9,7 @@
         android:scaleType="fitXY"
         android:adjustViewBounds="true"
         android:transitionName="albumArt"
-        android:id="@+id/album_art"
+        android:id="@+id/pic"
         android:contentDescription="Album Art Thumbnail"/>
 
 </RelativeLayout>
