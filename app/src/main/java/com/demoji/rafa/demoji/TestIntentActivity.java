@@ -14,10 +14,10 @@ public class TestIntentActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.intent_screen);
 
-        Intent intent = getIntent();
-        String age = intent.getStringExtra("age");
+        //Intent intent = getIntent();
+        //String age = intent.getStringExtra("age");
         //String message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
-        Toast.makeText(TestIntentActivity.this, age, Toast.LENGTH_LONG).show();
+        //Toast.makeText(TestIntentActivity.this, age, Toast.LENGTH_LONG).show();
 
     }
 
