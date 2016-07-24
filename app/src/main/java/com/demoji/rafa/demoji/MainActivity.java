@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         Request request = new Request.Builder().url(url).build();
         Call call = client.newCall(request);
 
-        StaggeredGridLayoutManager lm = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
+        StaggeredGridLayoutManager lm = new StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(lm);
 
         call.enqueue(new Callback() {

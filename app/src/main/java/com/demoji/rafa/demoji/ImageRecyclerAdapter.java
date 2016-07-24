@@ -49,7 +49,7 @@ public class ImageRecyclerAdapter extends RecyclerView.Adapter<ImageRecyclerAdap
         String secret = picId.get(position).getSecret();
         String server = picId.get(position).getServer();
         picUrl = "https://farm" + farm +".staticflickr.com/"
-               + server +"/" + id + "/" + secret +".jpg";
+               + server +"/" + id + "_" + secret +"_z.jpg";
 
         Log.d("Pic Url", picUrl);
         Picasso.with(context).load(picUrl).into(holder.image);
@@ -57,6 +57,6 @@ public class ImageRecyclerAdapter extends RecyclerView.Adapter<ImageRecyclerAdap
 
     @Override
     public int getItemCount() {
-        return 0;
+        return picId.size();
     }
 }
