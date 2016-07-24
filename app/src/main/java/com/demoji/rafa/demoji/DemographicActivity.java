@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.app.Activity;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -29,7 +28,7 @@ import okhttp3.Request;
 import okhttp3.Response;
 import okhttp3.RequestBody;
 
-public class MainActivity extends AppCompatActivity implements OnItemSelectedListener {
+public class DemographicActivity extends AppCompatActivity implements OnItemSelectedListener {
 
     @BindView(R.id.input_username) EditText usernameField;
     @BindView(R.id.input_race) EditText raceField;
@@ -58,11 +57,11 @@ public class MainActivity extends AppCompatActivity implements OnItemSelectedLis
 
         if(sharedPreferences.contains("genderKey")) {
 //            String name = sharedPreferences.getString("genderKey", null);
-//            Toast.makeText(MainActivity.this, name, Toast.LENGTH_LONG).show();
-            Intent intent = new Intent(MainActivity.this, TestIntentActivity.class);
+//            Toast.makeText(DemographicActivity.this, name, Toast.LENGTH_LONG).show();
+            Intent intent = new Intent(DemographicActivity.this, TestIntentActivity.class);
             startActivity(intent);
         } else {
-            Toast.makeText(MainActivity.this, "Not Saved", Toast.LENGTH_LONG).show();
+            Toast.makeText(DemographicActivity.this, "Not Saved", Toast.LENGTH_LONG).show();
         }
 
         String[] incomes = new String[] { "$0-$30,000", "$30,000-$50,000", "$50,000-$75,000", "$100,000+" };
@@ -109,7 +108,7 @@ public class MainActivity extends AppCompatActivity implements OnItemSelectedLis
         });
 
         submitButton.setOnClickListener(new View.OnClickListener() {
-            Intent intent = new Intent(MainActivity.this, TestIntentActivity.class);
+            Intent intent = new Intent(DemographicActivity.this, TestIntentActivity.class);
             @Override
             public void onClick(View v) {
                 String gen = genderField.getText().toString();
@@ -181,7 +180,7 @@ public class MainActivity extends AppCompatActivity implements OnItemSelectedLis
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            Toast.makeText(MainActivity.this, "hello", Toast.LENGTH_LONG).show();
+                            Toast.makeText(DemographicActivity.this, "hello", Toast.LENGTH_LONG).show();
                         }
                     });
                 } else {

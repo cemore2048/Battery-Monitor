@@ -16,7 +16,7 @@ public class TestIntentActivity extends AppCompatActivity {
 
         //Intent intent = getIntent();
         //String age = intent.getStringExtra("age");
-        //String message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
+        //String message = intent.getStringExtra(DemographicActivity.EXTRA_MESSAGE);
         //Toast.makeText(TestIntentActivity.this, age, Toast.LENGTH_LONG).show();
 
     }
