@@ -81,47 +81,37 @@ public class MainActivity extends AppCompatActivity implements OnItemSelectedLis
         incomeSpinner.setAdapter(incomesAdapter);
         incomeSpinner.setOnItemSelectedListener(this);
 
-        ageSpinner.setOnItemSelectedListener(
-                new AdapterView.OnItemSelectedListener() {
+        ageSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view,
+                                       int pos, long id) {
 
-                    @Override
-                    public void onItemSelected(AdapterView<?> parent, View view,
-                                               int pos, long id) {
+                age = parent.getItemAtPosition(pos).toString();
+                //Toast.makeText(getApplicationContext(),"You have selected " + test,Toast.LENGTH_LONG).show();
+                // TODO Auto-generated method stub
+            }
 
-                        age = parent.getItemAtPosition(pos).toString();
-                        //Toast.makeText(getApplicationContext(),"You have selected " + test,Toast.LENGTH_LONG).show();
-                        // TODO Auto-generated method stub
-                    }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                // TODO Auto-generated method stub
+            }
+        });
 
-                    @Override
-                    public void onNothingSelected(AdapterView<?> parent) {
-                        // TODO Auto-generated method stub
+        incomeSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view,
+                                       int pos, long id) {
 
-                    }
+                income = parent.getItemAtPosition(pos).toString();
+                //Toast.makeText(getApplicationContext(),"You have selected " + test,Toast.LENGTH_LONG).show();
+                // TODO Auto-generated method stub
+            }
 
-                }
-        );
-
-        incomeSpinner.setOnItemSelectedListener(
-                new AdapterView.OnItemSelectedListener() {
-
-                    @Override
-                    public void onItemSelected(AdapterView<?> parent, View view,
-                                               int pos, long id) {
-
-                        income = parent.getItemAtPosition(pos).toString();
-                        //Toast.makeText(getApplicationContext(),"You have selected " + test,Toast.LENGTH_LONG).show();
-                        // TODO Auto-generated method stub
-                    }
-
-                    @Override
-                    public void onNothingSelected(AdapterView<?> parent) {
-                        // TODO Auto-generated method stub
-
-                    }
-
-                }
-        );
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                // TODO Auto-generated method stub
+            }
+        });
 
         submitButton.setOnClickListener(new View.OnClickListener() {
             Intent intent = new Intent(MainActivity.this, TestIntentActivity.class);
@@ -145,8 +135,8 @@ public class MainActivity extends AppCompatActivity implements OnItemSelectedLis
 
             public void run() throws Exception {
                 RequestBody formBody = new FormBody.Builder()
-                        .add("username", "Jurassic@Park.com")
-                        .add("gender", "90301171XX")
+                        .add("username", "rmoreno")
+                        .add("gender", "male")
                         .build();
                 Request request = new Request.Builder()
                         .url("159.203.240.126:3001")
