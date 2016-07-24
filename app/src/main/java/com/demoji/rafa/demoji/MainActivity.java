@@ -35,15 +35,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
-        Spinner dynamicSpinner = (Spinner) findViewById(R.id.dynamic_spinner);
-
-        String[] incomes = new String[] { "$0-$50,000", "$50,000-$100,000", "$100,000+" };
-
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_spinner_item, incomes);
-
-        dynamicSpinner.setAdapter(adapter);
-        ;
         sharedPreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
 
         if(sharedPreferences.contains("genderKey")) {
@@ -55,6 +46,15 @@ public class MainActivity extends AppCompatActivity {
         } else {
             Toast.makeText(MainActivity.this, "Not Saved", Toast.LENGTH_LONG).show();
         }
+
+        Spinner dynamicSpinner = (Spinner) findViewById(R.id.dynamic_spinner);
+
+        String[] incomes = new String[] { "$0-$50,000", "$50,000-$100,000", "$100,000+" };
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_spinner_item, incomes);
+
+        dynamicSpinner.setAdapter(adapter);
 
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
