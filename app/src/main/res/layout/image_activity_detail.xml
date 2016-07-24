@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray">
+
+    <ImageView
+        android:id="@+id/pic_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"
+        android:adjustViewBounds="true"/>
+
+    <LinearLayout
+        android:id="@+id/emoji_container"
+        android:layout_below="@+id/pic_detail"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:orientation="horizontal"
+        android:padding="25dp">
+
+        <Button
+            android:id="@+id/happy"
+            android:textSize="30sp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/button_selector" />
+
+        <Button
+            android:id="@+id/sad"
+            android:textSize="30sp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/button_selector" />
+
+        <Button
+            android:id="@+id/annoyed"
+            android:textSize="30sp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/button_selector" />
+
+        <Button
+            android:id="@+id/love"
+            android:textSize="30sp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/button_selector" />
+
+        <Button
+            android:id="@+id/angry"
+            android:textSize="30sp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/button_selector" />
+
+        <Button
+            android:id="@+id/laughing"
+            android:textSize="30sp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/button_selector" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/compare"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/emoji_container"
+        android:layout_marginTop="10dp"
+        android:text="comppare"
+        android:src="@drawable/compare_selector"/>
+</RelativeLayout>
