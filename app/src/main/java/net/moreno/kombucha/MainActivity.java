@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity implements ValueEventListene
         kombuchaList.setHasFixedSize(true);
         kombuchaList.setLayoutManager(new LinearLayoutManager(this));
 
-        
+
     }
 
     @Override
