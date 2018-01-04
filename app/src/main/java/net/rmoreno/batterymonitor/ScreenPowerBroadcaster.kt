@@ -3,19 +3,18 @@ package net.rmoreno.batterymonitor
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
-import android.widget.Toast
 
-class BatteryBroadcast : BroadcastReceiver() {
+class ScreenReceiver : BroadcastReceiver() {
 
-    var wasScreenOn: Boolean? = null
+    private var screenOff: Boolean = false
 
     override fun onReceive(context: Context, intent: Intent) {
         if (intent.action == Intent.ACTION_SCREEN_OFF) {
-            // TODO: start timing here
-            wasScreenOn = false
+            screenOff = true
         } else if (intent.action == Intent.ACTION_SCREEN_ON) {
-            // TODO: end timing here
-            wasScreenOn = true
+            screenOff = false
         }
     }
+
 }
+

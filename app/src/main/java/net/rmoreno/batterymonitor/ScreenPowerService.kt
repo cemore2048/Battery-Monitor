@@ -4,12 +4,12 @@ import android.app.IntentService
 import android.app.Service
 import android.content.Intent
 import android.content.IntentFilter
-import android.os.IBinder
 
 class ScreenPowerService : IntentService("Screen Power Service") {
-    override fun onBind(p0: Intent?): IBinder? {
-        return null
-    }
+
+//    val ACTION_SCREEN_ON = ScreenPowerService::class.java.canonicalName as String + ".action.SCREEN_ON"
+//
+//    val ACTION_SCREEN_OFF = ScreenPowerService::class.java.canonicalName as String + ".action.SCREEN_OFF"
 
     override fun onCreate() {
         val filter = IntentFilter(Intent.ACTION_SCREEN_ON)
@@ -18,7 +18,7 @@ class ScreenPowerService : IntentService("Screen Power Service") {
         registerReceiver(mReceiver, filter)
     }
 
-    override fun onHandleIntent(p0: Intent?) {
+    override fun onHandleIntent(intent: Intent?) {
         TODO("not implemented")
     }
 
