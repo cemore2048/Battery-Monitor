@@ -14,8 +14,8 @@ class ScreenPowerService : IntentService("Screen Power Service") {
     override fun onCreate() {
         val filter = IntentFilter(Intent.ACTION_SCREEN_ON)
         filter.addAction(Intent.ACTION_SCREEN_OFF)
-        val mReceiver = ScreenReceiver()
-        registerReceiver(mReceiver, filter)
+        val receiver = ScreenPowerBroadcaster()
+        registerReceiver(receiver, filter)
     }
 
     override fun onHandleIntent(intent: Intent?) {
