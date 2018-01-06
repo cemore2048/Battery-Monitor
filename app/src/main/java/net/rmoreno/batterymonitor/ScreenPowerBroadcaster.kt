@@ -19,6 +19,5 @@ class ScreenPowerBroadcaster : BroadcastReceiver() {
             screenOnTime = System.currentTimeMillis()
         }
     }
-
 }
 
