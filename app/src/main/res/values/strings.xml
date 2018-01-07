@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">Battery Monitor</string>
     <string name="action_settings">Settings</string>
+    <string name="time_pref">TIME_PREFS</string>
+    <string name="time_off">time_off</string>
+    <string name="time_on">time_on</string>
+    <string name="last_time_on">last_time_on</string>
 </resources>

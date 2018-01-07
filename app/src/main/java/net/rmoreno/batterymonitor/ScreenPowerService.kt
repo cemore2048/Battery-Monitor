@@ -24,7 +24,6 @@ class ScreenPowerService : Service() {
 
     override fun onDestroy() {
         //Start new intent service that actually takes into consideration time.
-
         if (receiver != null) {
             unregisterReceiver(receiver)
         }

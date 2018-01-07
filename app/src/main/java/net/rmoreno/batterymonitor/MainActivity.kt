@@ -1,16 +1,17 @@
 package net.rmoreno.batterymonitor
 
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
-import android.support.design.widget.FloatingActionButton
-import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.Toolbar
-import android.view.View
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.TextView
 
 class MainActivity : AppCompatActivity() {
+
+    var time: TextView? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,6 +21,12 @@ class MainActivity : AppCompatActivity() {
 
         val intent = Intent(this@MainActivity, ScreenPowerService::class.java)
         startService(intent)
+
+        val prefs: SharedPreferences = getSharedPreferences(getString(R.string.time_pref), 0)
+        val lastTimeOn = prefs.getLong(getString(R.string.last_time_on), 0)
+
+        time = findViewById(R.id.time) as TextView
+        time!!.text = lastTimeOn.toString()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
