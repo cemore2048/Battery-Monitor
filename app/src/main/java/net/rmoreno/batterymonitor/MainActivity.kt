@@ -41,10 +41,8 @@ class MainActivity : AppCompatActivity() {
         // as you specify a parent activity in AndroidManifest.xml.
         val id = item.itemId
 
-
         return if (id == R.id.action_settings) {
             true
         } else super.onOptionsItemSelected(item)
-
     }
 }

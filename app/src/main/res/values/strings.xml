@@ -5,4 +5,5 @@
     <string name="time_off">time_off</string>
     <string name="time_on">time_on</string>
     <string name="last_time_on">last_time_on</string>
+    <string name="unlock_count">unlock_count</string>
 </resources>
