@@ -7,7 +7,6 @@ import android.content.SharedPreferences
 
 class ScreenPowerBroadcaster : BroadcastReceiver() {
 
-
     override fun onReceive(context: Context, intent: Intent) {
         val editor : SharedPreferences.Editor = context.getSharedPreferences(context.getString(R.string.time_pref), 0).edit()
         val prefs = context.getSharedPreferences(context.getString(R.string.time_pref), 0)

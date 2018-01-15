@@ -12,6 +12,7 @@ import android.widget.TextView
 class MainActivity : AppCompatActivity() {
 
     var time: TextView? = null
+    var prefs: SharedPreferences? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,10 +23,13 @@ class MainActivity : AppCompatActivity() {
         val intent = Intent(this@MainActivity, ScreenPowerService::class.java)
         startService(intent)
 
-        val prefs: SharedPreferences = getSharedPreferences(getString(R.string.time_pref), 0)
-        val lastTimeOn = prefs.getLong(getString(R.string.last_time_on), 0)
-
         time = findViewById(R.id.time) as TextView
+        prefs = getSharedPreferences(getString(R.string.time_pref), 0)
+    }
+
+    fun displayTime() {
+        val lastTimeOn = prefs?.getLong(getString(R.string.last_time_on), 0)
+
         time!!.text = lastTimeOn.toString()
     }
 
@@ -33,6 +37,11 @@ class MainActivity : AppCompatActivity() {
         // Inflate the menu; this adds items to the action bar if it is present.
         menuInflater.inflate(R.menu.menu_main, menu)
         return true
+    }
+
+    override fun onResume() {
+        super.onResume()
+        displayTime()
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
