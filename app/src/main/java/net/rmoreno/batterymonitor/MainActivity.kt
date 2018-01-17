@@ -11,9 +11,9 @@ import android.widget.TextView
 
 class MainActivity : AppCompatActivity() {
 
-    var time: TextView? = null
-    var amount: TextView? = null
-    var prefs: SharedPreferences? = null
+    private var time: TextView? = null
+    private var unlockAmount: TextView? = null
+    private var prefs: SharedPreferences? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,15 +25,15 @@ class MainActivity : AppCompatActivity() {
         startService(intent)
 
         time = findViewById(R.id.time) as TextView
-        amount = findViewById(R.id.amount) as TextView
+        unlockAmount = findViewById(R.id.amount) as TextView
         prefs = getSharedPreferences(getString(R.string.time_pref), 0)
     }
 
-    fun displayTime() {
+    private fun displayTime() {
         val lastTimeOn = prefs?.getLong(getString(R.string.last_time_on), 0)
         val unlockCount = prefs?.getInt(getString(R.string.unlock_count), 0)
-        time!!.text = lastTimeOn.toString()
-        amount!!.text = unlockCount.toString()
+        time!!.text = DateUtil.formatElapsedTime(lastTimeOn!!)
+        unlockAmount!!.text = unlockCount.toString()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

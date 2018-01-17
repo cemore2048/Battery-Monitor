@@ -14,9 +14,9 @@ class ScreenPowerBroadcaster : BroadcastReceiver() {
         if (intent.action == Intent.ACTION_SCREEN_OFF) {
             val currTime = System.currentTimeMillis()
             val timeOn: Long = prefs.getLong(context.getString(R.string.time_on), 0)
-            val totalTime : Long = currTime - timeOn
+            val lastOnTime : Long = currTime - timeOn
 
-            editor.putLong(context.getString(R.string.last_time_on), totalTime).apply()
+            editor.putLong(context.getString(R.string.last_time_on), lastOnTime).apply()
 
         } else if (intent.action == Intent.ACTION_SCREEN_ON) {
             //screenOff = false
@@ -24,7 +24,7 @@ class ScreenPowerBroadcaster : BroadcastReceiver() {
             val screenOnCount = prefs.getInt(context.getString(R.string.unlock_count), 0) + 1
 
             screenOnCount.let{editor.putInt(context.getString(R.string.unlock_count), screenOnCount)}
-            screenOnTime?.let {editor.putLong(context.getString(R.string.time_on), screenOnTime!!).apply()}
+            screenOnTime.let {editor.putLong(context.getString(R.string.time_on), screenOnTime).apply()}
         }
     }
 }
